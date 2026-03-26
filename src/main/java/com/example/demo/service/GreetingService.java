@@ -59,4 +59,13 @@ public class GreetingService {
         }
         return null;
     }
+    public String deleteGreeting(Long id) {
+        for (Greeting g : greetingList) {
+            if (g.getId().equals(id)) {
+                greetingList.remove(g);
+                return "Deleted successfully";
+            }
+        }
+        return "Greeting not found";
+    }
 }
