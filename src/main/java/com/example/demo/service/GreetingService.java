@@ -1,13 +1,23 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Greeting;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class GreetingService {
 
+    private final List<Greeting> greetingList = new ArrayList<>();
+    private Long counter = 1L;
+
+    // UC2 method
     public String getGreetingMessage() {
         return "Hello World";
     }
+
+    // UC3 method
     public String getCustomGreeting(String firstName, String lastName) {
 
         if (firstName != null && lastName != null) {
@@ -19,5 +29,12 @@ public class GreetingService {
         } else {
             return "Hello World";
         }
+    }
+
+    // UC4 method (SAVE)
+    public Greeting saveGreeting(String message) {
+        Greeting greeting = new Greeting(counter++, message);
+        greetingList.add(greeting);
+        return greeting;
     }
 }
