@@ -8,6 +8,12 @@ The application is built using a layered architecture with Controller and Servic
 
 ---
 
+> **Note:**  
+> The complete source code for this project is available in the `dev` branch.  
+> The `main` branch contains only project overview and documentation.
+
+---
+
 ## Features
 
 * Get default greeting message
